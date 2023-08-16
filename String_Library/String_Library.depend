@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1692053626 source:d:\courses\c exercises\my solutions\string_library\main.c
+	<stdio.h>
+	<stdlib.h>
+	"My_String.h"
+	<String.h>
+
+1692034589 d:\courses\c exercises\my solutions\string_library\my_string.h
+
+1692053430 source:d:\courses\c exercises\my solutions\string_library\my_string.c
+	<stdio.h>
+	"My_String.h"
+
