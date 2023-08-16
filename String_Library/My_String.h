@@ -5,15 +5,29 @@
 #ifndef NULL
 #define NULL ((void *)0)
 #endif // NULL
-
-/* (my_memchr) searches for the first occurrence of the character c (an unsigned char) in the first n bytes of the string pointed to,
-    by the argument str. */
-
+/*******************************************************************************************************************************************************************************************************
+ * Function Name: my_memchr
+ * Arguments    : str (pointer to required data to search in) , c (character to look for), Size(Number of bytes will be checked).
+ * Return       : Pointer to void
+ * Description  :(my_memchr) searches for the first occurrence of the character c (an unsigned char) in the first n bytes of the string pointed to, by the argument str.
+ *******************************************************************************************************************************************************************************************************/
 void *my_memchr(const void* str, unsigned char c, unsigned int Size);
-/* Copies n characters from src to dest. */
+
+/*******************************************************************************************************************************************************************************************************
+ * Function Name: my_memcpy
+ * Arguments    : Dest (pointer to the first location, where data will be copied) , Src (pointer to the first location, where data will be copied from), Size(Number of bytes to be copied).
+ * Return       : Pointer to void
+ * Description  :Copies n characters from src to dest.
+ *******************************************************************************************************************************************************************************************************/
 void *my_memcpy(void* Dest,const void* Src, unsigned int Size);
 
-/* Compares Str1 with Str2 for specific Number Of Bytes(NumOfBytes) */
+/*******************************************************************************************************************************************************************************************************
+ * Function Name: my_memcmp
+ * Arguments    : str1 , str2 (Compared against each other ), NumOfBytes(Number of bytes to be compared).
+ * Return       : int -> 1 (str1 > str2) or -1 (str1 < str2) or 0 (str1 = str2).
+ * Description  : Compares Str1 with Str2 for specific Number Of Bytes(NumOfBytes).
+ ********************************************************************************************************************************************************************************************************/
+
 int  my_memcmp(const void* str1 , const void* str2, unsigned int NumOfBytes);
 
 /* Assign charachter to a specific block of memory from Dest to Dest + Size */

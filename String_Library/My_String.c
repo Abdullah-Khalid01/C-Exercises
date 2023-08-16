@@ -512,32 +512,37 @@ char *my_strstr(const char *str1, const char *str2)
 
 char *my_strtok(char *str, const char *delim)
 {
+    /* To return the string, after tokenization */
     static char Buffer[200]       =  {0}       ;
-
+    /* To be able to handle string if NULL is sent. NULL means retieve the next token */
     static char Copy[200]         =  {0}       ;
-
+    /* To store the position of the last character being checked.    */
     static unsigned int counter   =   0        ;
-
+    /* To check each character of the delimiter  */
     unsigned int delimCounter     =   0        ;
-
+    /* To store characters in the returned array */
     unsigned int Buffercounter    =   0        ;
-
+    /* Check if sentence is sent or NULL */
     if( str != NULL)
     {
+        /* re-initialize the counter to start over */
         counter = 0                            ;
+        /* Copy the string for further manipulation */
         my_strcpy(Copy,str)                    ;
     }
     else
     {
-
+        /* Do something. else block has no effect, but exists to follow MISRA. */
     }
+    /* as long as we neither reached the end of the delimiter  nor the string -> copy characters to the buffer array. */
     while((delim[delimCounter] != '\0') && (Copy[counter] != '\0'))
     {
-
+    /* if we has a match between character in the string and the delimiter, increase the counter to move to the next character in the delimiter.  */
         if(Copy[counter]==delim[delimCounter])
         {
             delimCounter++;
         }
+    /* if there is no match re-initialize the counter to start over */
         else
         {
             delimCounter = 0 ;
@@ -546,9 +551,10 @@ char *my_strtok(char *str, const char *delim)
         counter++                              ;
         Buffercounter++                        ;
     }
+    /* Assign null to the last element in the returned array to indicate end of the string. */
     Buffer[Buffercounter-delimCounter] = '\0'               ;
 
-
+    /* return the evaluated strin (Buffer), if the first element != NULL else return NULL. */
     return (Buffer[0]!='\0') ? Buffer : NULL   ;
 
 }
